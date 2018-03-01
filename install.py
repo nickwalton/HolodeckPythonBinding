@@ -63,11 +63,11 @@ def linux_installation():
     if path == "":
         path = default_path
 
+    path = expand_tilde(path)
+
     if not os.path.isdir(path):
         print("Unable to find path: " + path)
         return
-
-    path = expand_tilde(path)
 
     try:
         base_path = os.path.join(path, "Holodeck")
